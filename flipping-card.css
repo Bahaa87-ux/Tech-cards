@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cairo+Play:wght@200..1000&family=Cairo:wght@200..1000&family=Great+Vibes&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+  font-family: "Cairo Play", sans-serif;
+}
+
+/* ! ايه ميزه استخدام المارجين و البادنج بالاسلوب  ده  */
+.container {
+  display: grid;
+  place-items: center;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+}
+
+.container .card-container {
+  display: grid;
+  row-gap: 30px;
+}
+
+.card-article {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 30px;
+  direction: rtl;
+  text-align: right;
+}
+
+.card-article img {
+  width: 328px;
+  border-radius: 30px;
+  background-size: cover;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/*!شادووومميز*/
+.card-article .card-data {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  width: 280px;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -9rem;
+  margin-inline: auto;
+  /* opacity: 0; */
+  transition: opacity 1s 1s;
+  -webkit-transition: opacity 1s 1s;
+  -moz-transition: opacity 1s 1s;
+  -ms-transition: opacity 1s 1s;
+  -o-transition: opacity 1s 1s;
+}
+
+.card-description {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: 650;
+}
+
+.card-bottom {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  color: rgb(21, 197, 174);
+}
+
+.card-bottom:hover {
+  text-decoration: underline;
+}
+
+/* ?  Sart animation section */
+
+.card-article:hover .card-data {
+  opacity: 1;
+  animation: show-data 1s forwards;
+  -webkit-animation: show-data 1s forwards;
+  transition: opacity 0.3s;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -ms-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+}
+
+.card-article:hover {
+  animation: remove-overflow 2s forwards;
+  -webkit-animation: remove-overflow 2s forwards;
+}
+
+/* ! لتطبيق الخواص عند اختفاء الماوس من علي محتوي الكارت  */
+
+.card-article:not(:hover) {
+  animation: show-overflow 2s forwards;
+  -webkit-animation: show-overflow 2s forwards;
+}
+
+.card-article:not(:hover) .card-data {
+  animation: remove-data 1s forwards;
+  -webkit-animation: remove-data 1s forwards;
+}
+
+/* ?  End animation section */
+
+/* ? sart keyframe */
+
+/* بدايه الانميشن عند وضع السهم علي المتحوي   */
+
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+    -webkit-transform: translateY(-10rem);
+    -moz-transform: translateY(-10rem);
+    -ms-transform: translateY(-10rem);
+    -o-transform: translateY(-10rem);
+  }
+
+  100% {
+    transform: translateY(-7rem);
+    -webkit-transform: translateY(-7rem);
+    -moz-transform: translateY(-7rem);
+    -ms-transform: translateY(-7rem);
+    -o-transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    /* !  intial دي القيمه الاساسبه للعنصر نفسه  */
+    overflow: initial;
+  }
+}
+
+/* مهايه الانميشن عند وضع السهم علي المتحوي   */
+
+/* بدايه التاثير عن اختفاء الماوس عن المجتوي  */
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+    -webkit-transform: translateY(-7rem);
+    -moz-transform: translateY(-7rem);
+    -ms-transform: translateY(-7rem);
+    -o-transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+    -webkit-transform: translateY(-10rem);
+    -moz-transform: translateY(-10rem);
+    -ms-transform: translateY(-10rem);
+    -o-transform: translateY(-10rem);
+  }
+
+  100% {
+    transform: translateY(2rem);
+    -webkit-transform: translateY(2rem);
+    -moz-transform: translateY(2rem);
+    -ms-transform: translateY(2rem);
+    -o-transform: translateY(2rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+
+  50% {
+    overflow: hidden;
+  }
+}
+
+/* نهايه التاثير عن اختفاء الماوس عن المجتوي  */
+
+/* ? End  keyframe */
+
+/* ? start  media on screen  */
+
+/* small devises */
+
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card-data {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+/* madeim screen  */
+
+@media screen and (min-width: 768px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+  }
+}
+
+/* large screen  */
+
+@media screen and (min-width: 1120px) {
+  .container {
+    height: 100vh;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+  }
+  .card-data {
+    width: 316px !important;
+    padding-inline: 2.5rem;
+  }
+
+  img {
+    width: 348px !important;
+  }
+}
+
+/* ? end   media on screen  */
