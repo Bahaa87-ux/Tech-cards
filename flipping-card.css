@@ -7,8 +7,24 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: antiquewhite;
   font-family: "Cairo Play", sans-serif;
+}
+
+.home {
+  background-image: url(./assts/back4.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-color: hsla(0, 0%, 0%, 0.15);
 }
 
 /* ! ايه ميزه استخدام المارجين و البادنج بالاسلوب  ده  */
@@ -30,6 +46,7 @@ body {
   margin-bottom: 30px;
   direction: rtl;
   text-align: right;
+  height: 345px;
 }
 
 .card-article img {
@@ -173,11 +190,11 @@ h2 {
   }
 
   100% {
-    transform: translateY(2rem);
-    -webkit-transform: translateY(2rem);
-    -moz-transform: translateY(2rem);
-    -ms-transform: translateY(2rem);
-    -o-transform: translateY(2rem);
+    transform: translateY(3rem);
+    -webkit-transform: translateY(3rem);
+    -moz-transform: translateY(3rem);
+    -ms-transform: translateY(3rem);
+    -o-transform: translateY(3rem);
   }
 }
 
@@ -209,6 +226,10 @@ h2 {
     width: 250px;
     padding: 1rem;
   }
+
+  .card-article {
+    height: 327px;
+  }
 }
 
 /* madeim screen  */
@@ -217,6 +238,9 @@ h2 {
   .card-container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1.5rem;
+  }
+  .card-article {
+    height: 328px;
   }
 }
 
@@ -234,6 +258,10 @@ h2 {
   .card-data {
     width: 316px !important;
     padding-inline: 2.5rem;
+  }
+
+  .card-article {
+    height: 348px;
   }
 
   img {
